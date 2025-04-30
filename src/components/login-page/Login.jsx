@@ -5,6 +5,7 @@ import { login } from '../../redux/actions/authActions';
 import imgBanner from '../../assets/img/login-img.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const Login = () => {
 
   const [form, setForm] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,6 +32,10 @@ const Login = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
     <section className="login-page w-screen h-screen flex flex-row overflow-hidden">
       <div className="w-full md:w-1/2 flex justify-center items-center px-6 bg-[#0F172A]">
@@ -38,19 +44,46 @@ const Login = () => {
           <h3 className="text-3xl font-medium mb-3 text-white text-center">Sign in to your account</h3>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <input name="username"  type="text" placeholder="Username" className="w-full p-3 border-0 bg-[#1B2335] text-white rounded-xl font-medium" value={form.username} onChange={handleChange} required />
-          
-            <input name="password" type="password" placeholder="Password" className="w-full p-3 border-0 bg-[#1B2335] text-white rounded-xl font-medium" value={form.password} onChange={handleChange} required/>
+            <input
+              name="username"
+              type="text"
+              placeholder="Username"
+              className="w-full p-3 border-0 bg-[#1B2335] text-white rounded-xl font-medium"
+              value={form.username}
+              onChange={handleChange}
+              required
+            />
+
+            <div className="relative">
+              <input
+                name="password"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                className="w-full p-3 pr-12 border-0 bg-[#1B2335] text-white rounded-xl font-medium"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white"
+              >
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+              </button>
+            </div>
 
             {error && <p className="text-red-500 text-sm">{error}</p>}
             {!form.username && !form.password && (
               <p className="text-gray-400 text-sm mt-2 text-center">
-                Hint: Username: <strong>Karthi</strong>,
-                Password: <strong>Karthi@123</strong>
+                Hint: Username: <strong>Karthi</strong>, Password: <strong>Karthi@123</strong>
               </p>
             )}
 
-            <button type="submit" className="w-full bg-[#0284C7] text-white py-3 rounded-md hover:bg-[#06557e] transition cursor-pointer">
+            <button
+              type="submit"
+              className="w-full bg-[#0284C7] text-white py-3 rounded-md hover:bg-[#06557e] transition cursor-pointer"
+            >
               Sign In
             </button>
           </form>
