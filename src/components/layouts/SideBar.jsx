@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  faHouse,
-  faPenToSquare,
-  faImage,
-  faSignOutAlt,
-  faBars,
-  faTimes,
-} from '@fortawesome/free-solid-svg-icons';
+import {faHouse, faPenToSquare,faImage, faSignOutAlt, faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 const SideBar = () => {
   const location = useLocation();

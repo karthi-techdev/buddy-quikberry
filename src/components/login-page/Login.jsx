@@ -44,31 +44,11 @@ const Login = () => {
           <h3 className="text-3xl font-medium mb-3 text-white text-center">Sign in to your account</h3>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              name="username"
-              type="text"
-              placeholder="Username"
-              className="w-full p-3 border-0 bg-[#1B2335] text-white rounded-xl font-medium"
-              value={form.username}
-              onChange={handleChange}
-              required
-            />
+            <input name="username" type="text" placeholder="Username" className="w-full p-3 border-0 bg-[#1B2335] text-white rounded-xl font-medium" value={form.username} onChange={handleChange} required/>
 
             <div className="relative">
-              <input
-                name="password"
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Password"
-                className="w-full p-3 pr-12 border-0 bg-[#1B2335] text-white rounded-xl font-medium"
-                value={form.password}
-                onChange={handleChange}
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white"
-              >
+              <input name="password" type={showPassword ? 'text' : 'password'} placeholder="Password" className="w-full p-3 pr-12 border-0 bg-[#1B2335] text-white rounded-xl font-medium" value={form.password} onChange={handleChange} required/>
+              <button type="button" onClick={togglePasswordVisibility} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white">
                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
               </button>
             </div>
@@ -80,10 +60,7 @@ const Login = () => {
               </p>
             )}
 
-            <button
-              type="submit"
-              className="w-full bg-[#0284C7] text-white py-3 rounded-md hover:bg-[#06557e] transition cursor-pointer"
-            >
+            <button type="submit" className="w-full bg-[#0284C7] text-white py-3 rounded-md hover:bg-[#06557e] transition cursor-pointer">
               Sign In
             </button>
           </form>

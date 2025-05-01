@@ -7,12 +7,10 @@ const HeaderNav = () => {
   return (
     <div className="flex flex-wrap items-center justify-between bg-[#121d2f] p-3 text-white gap-3">
 
-      {/* Logo Section */}
       <div className="flex items-center text-xl font-semibold space-x-1 w-full md:w-auto justify-center md:justify-start">
         <div className="text-white-500 text-3xl">Buddy.</div>
       </div>
 
-      {/* Search Bar */}
       <div className="flex-grow w-full md:max-w-md md:mx-8 order-3 md:order-none">
         <input 
           type="text" 
@@ -21,7 +19,6 @@ const HeaderNav = () => {
         />
       </div>
 
-      {/* Action Buttons */}
       <div className="flex items-center justify-between md:justify-end space-x-5 w-full md:w-auto order-2 md:order-none">
         <button className="text-lg hover:text-gray-300">
           <FontAwesomeIcon icon={faPlus} />
@@ -40,11 +37,7 @@ const HeaderNav = () => {
           <FontAwesomeIcon icon={faCommentDots} />
         </button>
 
-        <img 
-          src={profileImg} 
-          alt="Profile" 
-          className="w-8 h-8 rounded-full object-cover"
-        />
+        <img src={profileImg} alt="Profile" className="w-8 h-8 rounded-full object-cover"/>
       </div>
 
     </div>
