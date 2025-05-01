@@ -64,7 +64,7 @@ const Home = () => {
           </ul>
         </div>
 
-        <div className="bg-[#1c2b45] p-4 rounded-xl shadow">
+        <div className="bg-[#1c2b45] p-4 rounded-xl shadow mb-20  ">
           <h3 className="text-xl font-semibold mb-3">Friend List</h3>
           <div className="space-y-3">
             {['Sanjay', 'Kishore', 'Ajai'].map((friend, idx) => (
