@@ -5,18 +5,14 @@ import profileImg from '../../assets/img/profile-img.jpg';
 
 const HeaderNav = () => {
   return (
-    <div className="flex flex-wrap items-center justify-between bg-[#121d2f] p-3 text-white gap-3">
+    <div className="flex flex-wrap items-center justify-between z-40 bg-[#121d2f] p-3 text-white gap-3">
 
       <div className="flex items-center text-xl font-semibold space-x-1 w-full md:w-auto justify-center md:justify-start">
         <div className="text-white-500 text-3xl">Buddy.</div>
       </div>
 
       <div className="flex-grow w-full md:max-w-md md:mx-8 order-3 md:order-none">
-        <input 
-          type="text" 
-          placeholder="Search Friends" 
-          className="w-full px-4 py-2 bg-[#1c2b45] text-sm text-white rounded-md outline-none placeholder-gray-400"
-        />
+        <input type="text"  placeholder="Search Friends" className="w-full px-4 py-2 bg-[#1c2b45] text-sm text-white rounded-md outline-none placeholder-gray-400"/>
       </div>
 
       <div className="flex items-center justify-between md:justify-end space-x-5 w-full md:w-auto order-2 md:order-none">
