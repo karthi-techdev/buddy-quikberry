@@ -5,7 +5,7 @@ import profileImg from '../../assets/img/profile-img.jpg';
 
 const HeaderNav = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-between z-40 bg-[#121d2f] p-3 text-white gap-3 w-full">
+    <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between z-40 bg-[#121d2f] p-3 text-white gap-3">
       <div className="flex items-center text-xl font-semibold space-x-1 w-full md:w-auto justify-center md:justify-start">
         <div className="text-white-500 text-3xl">Buddy.</div>
       </div>
